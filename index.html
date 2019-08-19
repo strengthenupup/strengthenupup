@@ -152,6 +152,1559 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="w-idea缓存目录迁移" class="article article-type-w  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/idea缓存目录迁移/">idea缓存目录迁移</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/idea缓存目录迁移/" class="archive-article-date">
+  	<time datetime="2019-08-19T07:02:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="idea缓存目录迁移"><a href="#idea缓存目录迁移" class="headerlink" title="idea缓存目录迁移"></a>idea缓存目录迁移</h3><p>1.找到idea安装目录下bin中的。</p>
+<p><img src="/2019/08/19/idea缓存目录迁移/ideabin.png" alt="bin"></p>
+<p>2.打开后更改相应配置。</p>
+<p><img src="/2019/08/19/idea缓存目录迁移/ideacache.png" alt="cache"></p>
+<ul>
+<li>一定要注意修改之前，默认是注释的，一定要取消配置否则不会生效。</li>
+</ul>
+<p>3.重启idea。</p>
+<p><img src="/2019/08/19/idea缓存目录迁移/ideastart.png" alt="cache"></p>
+<p>4.重启之后选择原来的配置文件就可以，会自动帮你迁移到你新的存储位置。</p>
+<p>5.成功后c盘旧的缓存目录可以删除。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/19/idea缓存目录迁移/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="w-配置Linux网络环境" class="article article-type-w  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/配置Linux网络环境/">配置Linux网络环境</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/配置Linux网络环境/" class="archive-article-date">
+  	<time datetime="2019-08-19T07:01:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-编辑-虚拟机网络编辑器"><a href="#1-编辑-虚拟机网络编辑器" class="headerlink" title="1.编辑-虚拟机网络编辑器"></a>1.编辑-虚拟机网络编辑器</h2><ul>
+<li>第一步打开编辑器</li>
+</ul>
+<p><img src="/2019/08/19/配置Linux网络环境/Internet01.png" alt></p>
+<ul>
+<li><p>选择VMNet8 (NAT)    </p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i.子网 192.168.2.0</span><br><span class="line">ii.更改设置-DHCP设置 ：</span><br><span class="line">	起始192.168.2.128	</span><br><span class="line">	结束192.168.2.254  </span><br><span class="line">iii.NAT设置：网关 192.168.2.1</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="/2019/08/19/配置Linux网络环境/Internet04.png" alt><br><img src="/2019/08/19/配置Linux网络环境/Internet02.png" alt><br><img src="/2019/08/19/配置Linux网络环境/Internet03.png" alt><br><img src="/2019/08/19/配置Linux网络环境/Internet05.png" alt></p>
+<ul>
+<li>最后应用就可以</li>
+</ul>
+<h2 id="2-配置windows访问虚拟机"><a href="#2-配置windows访问虚拟机" class="headerlink" title="2.配置windows访问虚拟机"></a>2.配置windows访问虚拟机</h2><ul>
+<li>步骤：网络连接—&gt;vmNet8—&gt;TCP/IP V4 —&gt; IP192.168.2.2 ， 192.168.2.1（网关）</li>
+</ul>
+<p><img src="/2019/08/19/配置Linux网络环境/Internet06.png" alt></p>
+<h2 id="3-配置centos网卡"><a href="#3-配置centos网卡" class="headerlink" title="3.配置centos网卡"></a>3.配置centos网卡</h2><ul>
+<li><p>修改网卡配置 在Linux中开大终端 </p>
+<ul>
+<li><p>输入：vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+</li>
+<li><p>打开这个配置文件</p>
+</li>
+<li><p>修改相应配置</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">	HWADDR=<span class="number">00</span>:<span class="number">0</span>C:<span class="number">29</span>:<span class="number">7</span>A:D1:F2</span><br><span class="line">	TYPE=Ethernet</span><br><span class="line">	UUID=b129cd07-<span class="number">0</span>a05-<span class="number">419</span>e-a3a1-<span class="number">4</span>d73d3f37917</span><br><span class="line">	ONBOOT=yes</span><br><span class="line">	NM_CONTROLLED=yes</span><br><span class="line">	BOOTPROTO=<span class="keyword">static</span></span><br><span class="line">	IPADDR=<span class="number">192.168</span>.2.128</span><br><span class="line">	GATEWAY=<span class="number">192.168</span>.2.1</span><br><span class="line">	BROADCAST=<span class="number">192.168</span>.2.255</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/08/19/配置Linux网络环境/Internet07.png" alt></p>
+<h2 id="4-通过网络名访问虚拟机-192-168-2-128-gt-bigdata01"><a href="#4-通过网络名访问虚拟机-192-168-2-128-gt-bigdata01" class="headerlink" title="4.通过网络名访问虚拟机 (192.168.2.128 -&gt;bigdata01)"></a>4.通过网络名访问虚拟机 (192.168.2.128 -&gt;bigdata01)</h2><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">centos中:</span><br><span class="line">			vi /etc/hosts,</span><br><span class="line">			追加：</span><br><span class="line">			192.168.2.128 bigdata01</span><br><span class="line">		windows中:</span><br><span class="line">			C:\Windows\System32\drivers\etc\hosts</span><br><span class="line">			追加：</span><br><span class="line">			192.168.2.128 bigdata01</span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="5-配置网络服务"><a href="#5-配置网络服务" class="headerlink" title="5.配置网络服务"></a>5.配置网络服务</h2></li>
+</ul>
+<p><img src="/2019/08/19/配置Linux网络环境/Internet08.png" alt="1565858624415"></p>
+<p><img src="/2019/08/19/配置Linux网络环境/Internet09.png" alt="1565858637297"></p>
+<ul>
+<li><p>配置命令</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">service NetworkManager stop ---&gt; 停止网络服务</span><br><span class="line">/etc/init.d/network restart ---&gt; 重启网卡配置文件</span><br><span class="line">chkconfig NetworkManager off ---&gt;  关闭开机自启</span><br><span class="line">vi /etc/resolv.conf  追加nameserver 192.168.2.1 ---&gt;修改配置文件</span><br><span class="line">service network restart ---&gt; 重启网卡</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><img src="/2019/08/19/配置Linux网络环境/Internet10.png" alt="1565858637297"></p>
+</li>
+<li><p><img src="/2019/08/19/配置Linux网络环境/Internet11.png" alt="1565858637297"></p>
+</li>
+<li><p><img src="/2019/08/19/配置Linux网络环境/Internet12.png" alt="1565858637297"></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/19/配置Linux网络环境/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-搭建hexo-git博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/搭建hexo-git博客/">搭建hexo+git博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/搭建hexo-git博客/" class="archive-article-date">
+  	<time datetime="2019-08-19T07:01:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="搭建第一个技术博客（hexo-github）"><a href="#搭建第一个技术博客（hexo-github）" class="headerlink" title="搭建第一个技术博客（hexo+github）"></a>搭建第一个技术博客（hexo+github）</h1><p>​                                特别感谢up主：CodeSheep</p>
+<ul>
+<li>以下操作都是在windows10 64位操作系统演示</li>
+</ul>
+<h2 id="1-需要的环境"><a href="#1-需要的环境" class="headerlink" title="1. 需要的环境"></a>1. 需要的环境</h2><ul>
+<li>Node.js+git</li>
+<li>百度云网盘提供两个软件的安装包：</li>
+</ul>
+<h4 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h4><ul>
+<li><p>官网网址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a> </p>
+</li>
+<li><p>选择相应的操作系统</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565414453451.png" alt="1565414453451"></p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565414586211.png" alt="1565414586211"></p>
+</li>
+<li><p>安装过程默认就好，可以自定义。</p>
+</li>
+<li><p>安装成功后可以在桌面空白区域右键</p>
+</li>
+</ul>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565414977974.png" alt="img"> </p>
+<ul>
+<li>如图所示则表示安装成功。</li>
+</ul>
+<h4 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2. 安装Node.js"></a>2. 安装Node.js</h4><ul>
+<li>官网网址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> </li>
+<li>选择下载相应的操作系统的</li>
+</ul>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565413870038.png" alt="1565413688359"></p>
+<ul>
+<li><p>如果不是windows（X64）可以点击下面的Other Downloads寻找对应的版本。</p>
+</li>
+<li><p>安装步骤默认就可以。</p>
+</li>
+<li><p>可以查看版本。</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/fansile.png" alt="fansile"></p>
+</li>
+<li><p>则代表安装成功。</p>
+</li>
+</ul>
+<hr>
+<h2 id="2-正式搭建"><a href="#2-正式搭建" class="headerlink" title="2. 正式搭建"></a>2. 正式搭建</h2><ul>
+<li>提示：接下来所有操作都是在Git Bash中操作。或者可以以管理员身份打开cm</li>
+<li>打开方式：桌面右键–&gt;git bash here</li>
+</ul>
+<h3 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1. 安装hexo"></a>1. 安装hexo</h3><ul>
+<li><p>由于国内镜像源速度较慢利用npm安装一个cnpm（淘宝的源）</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试 cnpm 是否安装成功</p>
+</li>
+</ul>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565415921170.png" alt="1565415921170"></p>
+<ul>
+<li><p>用cnpm安装hexo</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证hexo是否安装成功。</p>
+</li>
+</ul>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565416209783.png" alt="1565416209783"></p>
+<h3 id="2-初始化hexo"><a href="#2-初始化hexo" class="headerlink" title="2. 初始化hexo"></a>2. 初始化hexo</h3><ul>
+<li><p>输入pwd查看当前路径</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565416426618.png" alt="1565416426618"></p>
+</li>
+<li><p>然后创建一个文件夹可以自定义文件夹的位置：我这里是放在D盘</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565416664762.png" alt="1565416664762"></p>
+</li>
+<li><p>进入blog02这个文件夹</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565416739646.png" alt="1565416739646"></p>
+</li>
+<li><p>接下来hexo初始化（位置一定要在创建的blog02目录下）</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/08/19/搭建hexo-git博客/1565416991422.png" alt="1565416991422"></p>
+</li>
+<li><p>由于网速较慢（后面我用我以前的），最后初始化成功后会提示：</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565417059550.png" alt="1565417059550"></p>
+</li>
+<li><p>再到相应文件夹中可以看到</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565417159690.png" alt="1565417159690"></p>
+</li>
+<li><p>常用命令</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #用来清理缓存文件</span><br><span class="line">hexo g      #生成文件</span><br><span class="line">hexo  s     #运行本地服务器</span><br><span class="line">hexo  d   #上传到服务器</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行hexo</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/08/19/搭建hexo-git博客/1565417368587.png" alt="1565417368587"></p>
+</li>
+<li><p>打开浏览器输入：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+</li>
+<li><p>可以看到hexo自带的主题：</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565417524650.png" alt="1565417524650"></p>
+</li>
+<li><p>到此说明hexo本地搭建完毕。</p>
+</li>
+</ul>
+<h3 id="3-测试hexo"><a href="#3-测试hexo" class="headerlink" title="3.测试hexo"></a>3.测试hexo</h3><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;博客测试&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/08/19/搭建hexo-git博客/1565418083920.png" alt="1565418083920"></p>
+</li>
+<li><p>进入到该文件夹所在位置打开文件，然后随意编辑你想要的的内容</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565418241166.png" alt="1565418241166"></p>
+</li>
+<li><p>然后回到blog目录下：</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565418322561.png" alt="1565418322561"></p>
+</li>
+<li><p>然后清理一下缓存：</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565418397645.png" alt="1565418397645"></p>
+</li>
+<li><p>然后在生成文件：</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565418577756.png" alt="1565418577756"></p>
+</li>
+<li><p>最后如上启动输入4000端口号，可以找到更新的文章。</p>
+</li>
+</ul>
+<h2 id="3-部署到github"><a href="#3-部署到github" class="headerlink" title="3.部署到github"></a>3.部署到github</h2><h3 id="1-安装git部署的插件（在blog下）"><a href="#1-安装git部署的插件（在blog下）" class="headerlink" title="1.安装git部署的插件（在blog下）"></a>1.安装git部署的插件（在blog下）</h3><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-登入github网址新建一个repository"><a href="#2-登入github网址新建一个repository" class="headerlink" title="2.登入github网址新建一个repository"></a>2.登入github网址新建一个repository</h3><ul>
+<li><p><img src="/2019/08/19/搭建hexo-git博客/123.png" alt="img"> </p>
+</li>
+<li><p>格式：账号名.github.io</p>
+</li>
+</ul>
+<h3 id="3-修改blog目录下的-config-yml文件"><a href="#3-修改blog目录下的-config-yml文件" class="headerlink" title="3.修改blog目录下的_config.yml文件"></a>3.修改blog目录下的_config.yml文件</h3><ul>
+<li><p>在Deployment下修改三个值</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565419308730.png" alt="1565419308730"></p>
+</li>
+<li><p>一定要切记冒号后面一定要加空格，否则容易报错</p>
+</li>
+</ul>
+<h3 id="4-部署到远端"><a href="#4-部署到远端" class="headerlink" title="4.部署到远端"></a>4.部署到远端</h3><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后输入github账号密码就可以。（这里我已经输入过密码）</p>
+</li>
+</ul>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565419665860.png" alt="1565419665860"></p>
+<ul>
+<li><p>成功后可以发现github仓库里多了很多东西</p>
+<p><img src="/2019/08/19/搭建hexo-git博客/1565419540031.png" alt="1565419540031"></p>
+</li>
+<li><p>最后打开浏览器在地址栏中输入你刚创建的仓库名字即可。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/19/搭建hexo-git博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-虚拟机VM安装Linux教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/虚拟机VM安装Linux教程/">虚拟机VM安装Linux教程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/虚拟机VM安装Linux教程/" class="archive-article-date">
+  	<time datetime="2019-08-19T07:00:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Windows安装Linux保姆级教程"><a href="#Windows安装Linux保姆级教程" class="headerlink" title="Windows安装Linux保姆级教程"></a>Windows安装Linux保姆级教程</h1><hr>
+<ul>
+<li>在此致谢颜群老师</li>
+<li>以下是我安装的版本：</li>
+<li>VMware12.5.9<ul>
+<li>百度云资源:</li>
+<li>密钥 ：5A02H-AU243-TZJ49-GTC7K-3C61N</li>
+<li>或者去官网</li>
+</ul>
+</li>
+<li>CentOS6 64位 完整版<ul>
+<li>下载地址：<a href="http://archive.kernel.org/centos-vault/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso" target="_blank" rel="noopener">http://archive.kernel.org/centos-vault/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso</a></li>
+<li>或者去官网</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="1-安装VMware"><a href="#1-安装VMware" class="headerlink" title="1.安装VMware"></a>1.安装VMware</h2><ul>
+<li>一般默认就可以，安装位置可以自定义。</li>
+</ul>
+<h2 id="2-创建虚拟机并配置"><a href="#2-创建虚拟机并配置" class="headerlink" title="2.创建虚拟机并配置"></a>2.创建虚拟机并配置</h2><ul>
+<li><p>打开VMware</p>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM01.png" alt></p>
+</li>
+<li><p>选择自定义</p>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM02.png" alt></p>
+</li>
+<li><p>选择与你下载版本对应就可以</p>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM03.png" alt></p>
+</li>
+<li><p>选择稍后安装</p>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM04.png" alt></p>
+</li>
+<li><p>选择对应的Linux系统的版本</p>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM05.png" alt></p>
+</li>
+<li><p>设置虚拟机名称以及安装路径</p>
+</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM06.png" alt></p>
+<ul>
+<li>默认</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM07.png" alt></p>
+<ul>
+<li>设置虚拟机内存，建议2G</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM08.png" alt></p>
+<ul>
+<li>设置网络</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM09.png" alt></p>
+<ul>
+<li>选择创建新的虚拟机</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM10.png" alt></p>
+<ul>
+<li>自定义磁盘大小</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM11.png" alt></p>
+<ul>
+<li>检查</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM12.png" alt></p>
+<ul>
+<li>再次点开虚拟机设置</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM13.png" alt></p>
+<ul>
+<li>选择CD/DVD—–&gt;使用ISO映像文件—–&gt;浏览你自己下载的Linux的ISO文件的位置</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/VM14.png" alt></p>
+<h2 id="3-安装Linux系统"><a href="#3-安装Linux系统" class="headerlink" title="3.安装Linux系统"></a>3.安装Linux系统</h2><ul>
+<li>安装</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent01.png" alt></p>
+<ul>
+<li>这步骤是检查系统的完整性，时间较长，可以跳过</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent02.png" alt></p>
+<ul>
+<li>选择语言</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent03.png" alt></p>
+<ul>
+<li>基本储存设备</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent04.png" alt></p>
+<ul>
+<li>点击是，给他一个干净的盘</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent05.png" alt></p>
+<ul>
+<li>输入网络中的名字</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent06.png" alt></p>
+<ul>
+<li>设置密码</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent07.png" alt></p>
+<ul>
+<li>选择自定义</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent08.png" alt></p>
+<ul>
+<li>创建分区</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent09.png" alt></p>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent10.png" alt></p>
+<ul>
+<li>创建第二个分区</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent11.png" alt></p>
+<ul>
+<li>第三个分区</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent12.png" alt></p>
+<ul>
+<li>最后分区结果</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent13.png" alt></p>
+<ul>
+<li>格式化</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent14.png" alt></p>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent15.png" alt></p>
+<ul>
+<li>自定义安装的软件</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent16.png" alt></p>
+<ul>
+<li>可以移除系统自带的jdk</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent17.png" alt></p>
+<ul>
+<li>等待安装完成，后重新引导。</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent18.png" alt></p>
+<ul>
+<li>重启之后进行系统基本配置</li>
+<li>可以不创建用户（直接跳过），直接用root超级管理员，看各自需求</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent19.png" alt></p>
+<ul>
+<li>可以勾选，或者自己用代码同步</li>
+</ul>
+<p><img src="/2019/08/19/虚拟机VM安装Linux教程/cent20.png" alt></p>
+<ul>
+<li>再次重启就完成系统安装了</li>
+</ul>
+<h2 id="4-登入系统"><a href="#4-登入系统" class="headerlink" title="4.登入系统"></a>4.登入系统</h2><ul>
+<li>输入账号密码登入</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/19/虚拟机VM安装Linux教程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Maven基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/Maven基础知识/">Maven基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/Maven基础知识/" class="archive-article-date">
+  	<time datetime="2019-08-19T07:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><hr>
+<h2 id="1-Maven的作用"><a href="#1-Maven的作用" class="headerlink" title="1. Maven的作用"></a>1. Maven的作用</h2><ul>
+<li>增加第三方Jar   (commons-fileupload.jar   commons-io.jar)</li>
+<li>jar包之间的依赖关系 （commons-fileupload.jar 自动关联下载所有依赖的Jar，并且不会冲突）</li>
+</ul>
+<h2 id="2-Maven的概念"><a href="#2-Maven的概念" class="headerlink" title="2. Maven的概念"></a>2. Maven的概念</h2><ul>
+<li>是一个基于Java平台的 自动化构建工具</li>
+<li>总的来说：自动化构建工具maven：将 原材料（java、js、css、html、图片）-&gt;产品（可发布项目）</li>
+</ul>
+<h3 id="2-1-管理过程"><a href="#2-1-管理过程" class="headerlink" title="2.1 管理过程"></a>2.1 管理过程</h3><ul>
+<li>清理：删除编译的结果，为重新编译做准备。</li>
+<li>编译：java-&gt;class</li>
+<li>测试： 针对于 项目中的关键点进行测试，亦可用 项目中的测试代码 去测试开发代码；</li>
+<li>报告：将测试的结果 进行显示</li>
+<li>打包： 将项目中包含的多个文件 压缩成一个文件， 用于安装或部署。 （java项目-jar、web项目-war）</li>
+<li>安装：将打成的包  放到  本地仓库，供其他项目使用。</li>
+<li>部署：将打成的包  放到  服务器上准备运行。</li>
+</ul>
+<h2 id="3-配置Maven"><a href="#3-配置Maven" class="headerlink" title="3. 配置Maven"></a>3. 配置Maven</h2><ul>
+<li><p>第一步：配置JAVA_HOME</p>
+</li>
+<li><p>第二步：配置MAVEN_HOME或者M2_HOME</p>
+<ul>
+<li>D:\apache-maven-3.5.3\bin</li>
+</ul>
+</li>
+<li><p>第三步：配置path</p>
+<ul>
+<li>%MAVEN_HOME%\bin</li>
+</ul>
+</li>
+<li><p>第四步：验证，cmd中输入</p>
+<ul>
+<li>mvn -version</li>
+<li>出现版本号表示配置成功</li>
+</ul>
+</li>
+<li><p>第五步：配置本地仓库</p>
+<ul>
+<li><p>打开：maven目录/conf/settings.xml</p>
+</li>
+<li><p>默认本地仓库 ：C:/Users/YANQUN/.m2/repository</p>
+</li>
+<li><p>修改为： <localrepository>D:/mvnrep</localrepository></p>
+<p><img src="/2019/08/19/Maven基础知识/maven03.png" alt></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-Maven的约定"><a href="#4-Maven的约定" class="headerlink" title="4. Maven的约定"></a>4. Maven的约定</h2><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">maven约定的目录结构：</span><br><span class="line">		项目</span><br><span class="line">		-src				</span><br><span class="line">			--main			：程序功能代码</span><br><span class="line">				--java		 java代码  (Hello xxx)</span><br><span class="line">				--resources      资源代码、配置代码</span><br><span class="line">			--test			：测试代码</span><br><span class="line">				--java			</span><br><span class="line">				--resources	</span><br><span class="line">	        pom.xml</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="5-通过Maven创建Java项目"><a href="#5-通过Maven创建Java项目" class="headerlink" title="5. 通过Maven创建Java项目"></a>5. 通过Maven创建Java项目</h2><ul>
+<li>前提：配置maven</li>
+</ul>
+<p><img src="/2019/08/19/Maven基础知识/maven04.png" alt></p>
+<p><img src="/2019/08/19/Maven基础知识/maven05.png" alt></p>
+<ul>
+<li><p>第一步：new —-&gt; Maven Project —-&gt;</p>
+<p><img src="/2019/08/19/Maven基础知识/maven01.png" alt></p>
+<p><img src="/2019/08/19/Maven基础知识/maven02.png" alt></p>
+</li>
+</ul>
+<h2 id="6-运行Maven项目"><a href="#6-运行Maven项目" class="headerlink" title="6. 运行Maven项目"></a>6. 运行Maven项目</h2><h3 id="6-1-如何运行："><a href="#6-1-如何运行：" class="headerlink" title="6.1 如何运行："></a>6.1 如何运行：</h3><ul>
+<li><p>右键项目 —-&gt; run as —-&gt; Maven build… —-&gt; </p>
+<p><img src="/2019/08/19/Maven基础知识/maven07.png" alt></p>
+</li>
+</ul>
+<h3 id="6-2-Maven命令"><a href="#6-2-Maven命令" class="headerlink" title="6.2 Maven命令"></a>6.2 Maven命令</h3><ul>
+<li>compile 编译项目的源代码。</li>
+<li>test 使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。</li>
+<li>package 接受编译好的代码，打包成可发布的格式，如JAR。</li>
+<li>install 将包安装至本地仓库，已让其它项目依赖。</li>
+<li>clean 移除所有上一次构建生成的文件。</li>
+<li>其余还有很多命令，以上为常见命令。</li>
+</ul>
+<h2 id="7-maven生命周期"><a href="#7-maven生命周期" class="headerlink" title="7. maven生命周期"></a>7. maven生命周期</h2><ul>
+<li>3个阶段</li>
+<li>1.clean lifecycle ：清理<ul>
+<li>pre-clean  clean  post-clearn</li>
+</ul>
+</li>
+<li>2.default lifecycle ：默认(常用)</li>
+<li>3.site lifecycle：站点<ul>
+<li>pre-site   site   post-site site-deploy</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/08/19/Maven基础知识/maven08.png" alt></p>
+<h2 id="8-依赖"><a href="#8-依赖" class="headerlink" title="8. 依赖"></a>8. 依赖</h2><h3 id="8-1-依赖的范围、依赖的有效性"><a href="#8-1-依赖的范围、依赖的有效性" class="headerlink" title="8.1 依赖的范围、依赖的有效性"></a>8.1 依赖的范围、依赖的有效性</h3><ul>
+<li><p>A.jar —-&gt; B.jar</p>
+</li>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.0&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>compile</strong></th>
+<th><strong>test</strong></th>
+<th><strong>provided</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>编译</strong></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>测试</strong></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>部署（运行）</strong></td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Maven在编译、测试、运行项目时，各自使用一套classpath。</li>
+<li>compile(默认)</li>
+</ul>
+<h3 id="8-2-依赖排除"><a href="#8-2-依赖排除" class="headerlink" title="8.2 依赖排除"></a>8.2 依赖排除</h3><ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;exclusions&gt;</span><br><span class="line">    &lt;exclusion&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;</span><br><span class="line">    &lt;/exclusion&gt;</span><br><span class="line">&lt;/exclusions&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="8-3-依赖的传递性"><a href="#8-3-依赖的传递性" class="headerlink" title="8.3 依赖的传递性"></a>8.3 依赖的传递性</h3><ul>
+<li>A.jar —-&gt; B.jar —-&gt; C.jar</li>
+<li>要使 A.jar -&gt;C.jar:当且仅当 B.jar 依赖于C.jar的范围是compile</li>
+</ul>
+<h3 id="8-4-依赖原则"><a href="#8-4-依赖原则" class="headerlink" title="8.4 依赖原则"></a>8.4 依赖原则</h3><ol>
+<li>路径最短优先原则</li>
+<li>路径长度相同<ol>
+<li>在同一个pom.xml文件中有2个相同的依赖（覆盖）：后面声明的依赖 会覆盖前面声明的依赖（严禁使用本情况，严禁在同一个pom中声明2个版本不同的依赖）</li>
+<li>如果是不同的 pom.xml中有2个相同的依赖（优先）：则先声明的依赖 ，会覆盖后声明的依赖</li>
+</ol>
+</li>
+</ol>
+<h2 id="9-多个maven项目（模块）之间如何-依赖"><a href="#9-多个maven项目（模块）之间如何-依赖" class="headerlink" title="9.多个maven项目（模块）之间如何 依赖"></a>9.多个maven项目（模块）之间如何 依赖</h2><ul>
+<li><p>p项目 —-&gt; q项目</p>
+<ul>
+<li><ol>
+<li>p项目 install 到本地仓库</li>
+</ol>
+</li>
+<li><ol>
+<li><p>q项目 依赖：</p>
+<ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.lanqiao.maven&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;HelloWorld2&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在eclipse中编写完pom.xml依赖后，需要maven-update project</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="10-通过Maven创建Web项目"><a href="#10-通过Maven创建Web项目" class="headerlink" title="10. 通过Maven创建Web项目"></a>10. 通过Maven创建Web项目</h2><ul>
+<li><p>第一步：跟创建Maven的java普通项目一样</p>
+<p><img src="/2019/08/19/Maven基础知识/maven09.png" alt></p>
+</li>
+<li><p>第二步：由于没有eclipse没有在src/main/webapps目录下自动生成WEB_INF目录和web.xml文件，项目会报错。</p>
+<p>因此解决方法：手动创建或者邮件项目 —-&gt; Java EE tools —-&gt; Generate…..</p>
+<p><img src="/2019/08/19/Maven基础知识/maven10.png" alt></p>
+<p><img src="/2019/08/19/Maven基础知识/maven11.png" alt></p>
+</li>
+<li><p>第三步：由于没有servlet运行环境，项目报错。有两种解决方法：</p>
+<ul>
+<li><p>第一种：右键 —-&gt; build path —-&gt; configure build path </p>
+</li>
+<li><p>第二种：通过maven自动下载。在pom.xml中输入gav等参数：</p>
+</li>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">  	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;3.1.0&lt;/version&gt;</span><br><span class="line">	    &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="11-部署Maven的Web项目"><a href="#11-部署Maven的Web项目" class="headerlink" title="11. 部署Maven的Web项目"></a>11. 部署Maven的Web项目</h2><ul>
+<li><p>第一步：执行命令 package</p>
+</li>
+<li><p>第二步：找到打包好的war包</p>
+</li>
+<li><p>第三步：将war包复制到Tomcat文件下的webapps目录中</p>
+<p><img src="/2019/08/19/Maven基础知识/maven12.png" alt></p>
+</li>
+<li><p>第四步：启动Tomcat就可以了，在浏览器中查看</p>
+</li>
+</ul>
+<h2 id="12-统一项目的jdk"><a href="#12-统一项目的jdk" class="headerlink" title="12. 统一项目的jdk"></a>12. 统一项目的jdk</h2><ol>
+<li><p>build path:删除旧版本，增加新版本</p>
+<ul>
+<li>右键项目-属性-Project Factors -java version 改版本  （之前存在要改的版本）</li>
+</ul>
+</li>
+<li><p>通过maven统一jdk版本</p>
+<ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;profiles&gt;</span><br><span class="line">    &lt;profile&gt;  </span><br><span class="line">        &lt;id&gt;jdk-18&lt;/id&gt;  </span><br><span class="line">        &lt;activation&gt;  </span><br><span class="line">            &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;  </span><br><span class="line">            &lt;jdk&gt;1.8&lt;/jdk&gt;  </span><br><span class="line">        &lt;/activation&gt;  </span><br><span class="line">        &lt;properties&gt;  </span><br><span class="line">            &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;  </span><br><span class="line">            &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;  </span><br><span class="line">            &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;  </span><br><span class="line">        &lt;/properties&gt;   </span><br><span class="line">    &lt;/profile&gt;  </span><br><span class="line"> &lt;/profiles&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="13-继承实现步骤"><a href="#13-继承实现步骤" class="headerlink" title="13. 继承实现步骤"></a>13. 继承实现步骤</h2><ol>
+<li><p>建立父工程： 父工程的打包方式为pom </p>
+</li>
+<li><p>在父工程的pom.xml中编写依赖:</p>
+<ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//写父工程所需要的依赖，比普通的maven多了一层&lt;dependencyManagement&gt;</span></span><br><span class="line">&lt;dependencyManagement&gt;</span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.0&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">&lt;/dependencyManagement&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>子类</p>
+<ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 给当前工程 继承一个父工程：<span class="number">1</span>加入父工程坐标gav   <span class="number">2</span>当前工程的Pom.xml到父工程的Pom.xml之间的 相对路径  --&gt;</span><br><span class="line"> 	 &lt;parent&gt;</span><br><span class="line"> 	 	&lt;!-- <span class="number">1</span>加入父工程坐标gav --&gt;</span><br><span class="line"> 	 	  &lt;groupId&gt;org.lanqiao.maven&lt;/groupId&gt;</span><br><span class="line">		  &lt;artifactId&gt;B&lt;/artifactId&gt;</span><br><span class="line">		  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">		 &lt;!-- <span class="number">2</span>当前工程的Pom.xml到父工程的Pom.xml之间的 相对路径 --&gt; </span><br><span class="line">		  &lt;relativePath&gt;../B/pom.xml&lt;/relativePath&gt;</span><br><span class="line"> 	 &lt;/parent&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>在子类中 需要声明 ：使用那些父类的依赖</p>
+<ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;!-- 声明：需要使用到父类的junit （只需要ga） --&gt;</span><br><span class="line">    &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>父-&gt;子工程,可以通过父工程  统一管理依赖的版本</li>
+</ul>
+<h2 id="14-聚合"><a href="#14-聚合" class="headerlink" title="14. 聚合"></a>14. 聚合</h2><ul>
+<li>作用：节省前置工程的install操作，都交给“聚合”一次性搞定。</li>
+<li>Maven将一个大工程拆分成 若干个子工程（子模块） </li>
+<li>聚合可以将拆分的多个子工程 合起来</li>
+</ul>
+<h2 id="15-聚合的使用"><a href="#15-聚合的使用" class="headerlink" title="15. 聚合的使用"></a>15. 聚合的使用</h2><ul>
+<li><p>在一个总工程中配置聚合： （聚合的配置 只能配置在（打包方式为pom）的Maven工程中）</p>
+</li>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;modules&gt;</span><br><span class="line">  		&lt;!--项目的根路径  --&gt;</span><br><span class="line">  	  &lt;module&gt;../Maven1&lt;/module&gt;</span><br><span class="line">  	  &lt;module&gt;../Maven2&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置完聚合之后，以后只要操作总工程，则会自动操作 改聚合中配置过的工程</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/19/Maven基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/Java基础知识/">Java基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/Java基础知识/" class="archive-article-date">
+  	<time datetime="2019-08-19T06:59:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="java基础知识"><a href="#java基础知识" class="headerlink" title="java基础知识"></a>java基础知识</h1><hr>
+<h2 id="1-转义字符"><a href="#1-转义字符" class="headerlink" title="1.转义字符"></a>1.转义字符</h2><ul>
+<li>转义字符：\</li>
+<li>换行：\n</li>
+<li>制表符：\t（补满八位）</li>
+</ul>
+<h2 id="2-注释"><a href="#2-注释" class="headerlink" title="2.注释"></a>2.注释</h2><ul>
+<li>单行注释 ：//</li>
+<li>多行注释 ：/*…*/</li>
+<li>文档注释 ： /** ..*/(将程序生成一个说明文档，则说明文档中的  说明文字就是通过文档注释生成的)</li>
+</ul>
+<h2 id="3-命名"><a href="#3-命名" class="headerlink" title="3.命名"></a>3.命名</h2><ul>
+<li>驼峰命名法(每个单词首字母大写)：项目名、类名</li>
+<li>第一个单词首字母小写+驼峰：变量</li>
+</ul>
+<h2 id="4-变量"><a href="#4-变量" class="headerlink" title="4.变量"></a>4.变量</h2><ul>
+<li>变量存在于内存中（程序结束，失效）</li>
+</ul>
+<h2 id="5-java数据类型"><a href="#5-java数据类型" class="headerlink" title="5.java数据类型"></a>5.java数据类型</h2><h3 id="5-1原生数据类型（基本数据类型）：8个"><a href="#5-1原生数据类型（基本数据类型）：8个" class="headerlink" title="5.1原生数据类型（基本数据类型）：8个"></a>5.1原生数据类型（基本数据类型）：8个</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字：</td>
+<td>整数：byte&lt;short&lt;int&lt;long</td>
+<td>默认int</td>
+</tr>
+<tr>
+<td></td>
+<td>小数：float&lt;double</td>
+<td>默认double</td>
+</tr>
+<tr>
+<td>非数字：</td>
+<td>字符char   ： 只能放一个 字符。</td>
+<td>需要用 单引号引起来</td>
+</tr>
+<tr>
+<td></td>
+<td>布尔boolean ： 只有true/false</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="/2019/08/19/Java基础知识/JAVASE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%8C%83%E5%9B%B4.jpg" alt></p>
+<ul>
+<li><p>char&lt;Int</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符遇到整形自动转换</span></span><br><span class="line">System.out.println(<span class="string">'A'</span>+<span class="number">0</span>);<span class="comment">//输出是65</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="5-2引用数据类型（对象类型）：1个"><a href="#5-2引用数据类型（对象类型）：1个" class="headerlink" title="5.2引用数据类型（对象类型）：1个"></a>5.2引用数据类型（对象类型）：1个</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>字符串：String</td>
+<td>放任意字符，并且需要用 双引号引起来</td>
+</tr>
+</tbody></table>
+<ul>
+<li>字符串的范围最大任意类型遇到字符串会自动转化为字符串</li>
+<li>整数范围&lt;小数范围</li>
+</ul>
+<h2 id="6-进制"><a href="#6-进制" class="headerlink" title="6. 进制"></a>6. 进制</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>二进制</td>
+<td>0b数字</td>
+<td>0或1</td>
+</tr>
+<tr>
+<td>十进制</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>0数字</td>
+<td>0，1，2，3，4，5，6，7八个数字</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>0x</td>
+<td>0到9和A到F</td>
+</tr>
+</tbody></table>
+<h2 id="7-控制台输出"><a href="#7-控制台输出" class="headerlink" title="7.控制台输出"></a>7.控制台输出</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">input.nextInt();</span><br><span class="line"><span class="comment">//还有别的Double...没有单独的Char</span></span><br><span class="line"><span class="comment">//输入字符串有两个</span></span><br><span class="line">input.next();<span class="comment">//不接收空格、回车并且将空格、回车作为终止符</span></span><br><span class="line">input.nextLine();<span class="comment">//接收空格、回车</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="8-类型转换练习"><a href="#8-类型转换练习" class="headerlink" title="8.类型转换练习"></a>8.类型转换练习</h3><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.已知圆的半径radius = 1.5,求面积</span></span><br><span class="line"><span class="keyword">double</span> radius = <span class="number">1.5</span>;</span><br><span class="line"><span class="keyword">double</span> pi = <span class="number">3.1415926</span>;</span><br><span class="line"><span class="keyword">double</span> area = raius * pi * pi;</span><br><span class="line">System.out.println(area);</span><br><span class="line"><span class="comment">//2.apple市场份额20，今年增加了9.8%，求今年。</span></span><br><span class="line"><span class="keyword">double</span> fenE = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">double</span> jinNianFenE = fenE * (<span class="number">1</span> + <span class="number">9.8</span>/<span class="number">100</span>);</span><br><span class="line">System.out.println(jinNianFenE);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="9-运算符"><a href="#9-运算符" class="headerlink" title="9.运算符"></a>9.运算符</h2><ul>
+<li><table>
+<thead>
+<tr>
+<th>算术运算符</th>
+<th>关系运算符</th>
+<th>逻辑运算符</th>
+<th>三目运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加 +</td>
+<td>等于 ==</td>
+<td>不等于 !</td>
+<td>X = 布尔判断 ? a : b ；</td>
+</tr>
+<tr>
+<td>减 -</td>
+<td>大于 &gt;</td>
+<td>短路与 &amp;&amp;</td>
+<td>True : X = a ;</td>
+</tr>
+<tr>
+<td>乘 *</td>
+<td>小于 &lt;</td>
+<td>短路或 ||</td>
+<td>False : X = b ;</td>
+</tr>
+<tr>
+<td>除 /</td>
+<td>大于等于 &gt;=</td>
+<td>与 &amp;</td>
+<td></td>
+</tr>
+<tr>
+<td>取余 %</td>
+<td>小于等于 &lt;=</td>
+<td>或 |</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>不等于 !=</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>字符串相等用 equals()或者!equals()</li>
+<li>关系运算符运算结果-&gt;布尔值</li>
+<li>% ：有符号问题， 结果永远与被除数一致</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 46天，包含了几周零几天</span></span><br><span class="line"><span class="keyword">int</span> weeks = <span class="number">46</span>/<span class="number">7</span> ;</span><br><span class="line"><span class="keyword">int</span> days =<span class="number">46</span> % <span class="number">7</span> ;</span><br><span class="line">System.out.println(weeks+<span class="string">"\t"</span>+days);</span><br><span class="line">System.out.println(<span class="string">"---"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//商场活动100当做120花；。 420元，付多少钱？</span></span><br><span class="line"><span class="keyword">int</span> money =  (<span class="number">420</span> / <span class="number">120</span>)*<span class="number">100</span>  + <span class="number">420</span> %<span class="number">120</span>  ;</span><br><span class="line">System.out.println(money);</span><br><span class="line">System.out.println(<span class="string">"---"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入张三成绩，与李四（80） 。输出 张三是否比李四高</span></span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in) ;</span><br><span class="line">System.out.println(<span class="string">"请输入张三成绩："</span>);</span><br><span class="line"><span class="keyword">int</span> zsScore = input.nextInt();</span><br><span class="line">System.out.println( zsScore &gt; <span class="number">80</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入五位数，求各个位数之和</span></span><br><span class="line"><span class="keyword">int</span> num = <span class="number">12345</span> ;</span><br><span class="line"><span class="keyword">int</span> geWei = num/<span class="number">1</span>      %<span class="number">10</span> ;<span class="comment">//12345-&gt;5</span></span><br><span class="line"><span class="keyword">int</span> shiWei = num/<span class="number">10</span>    %<span class="number">10</span> ;<span class="comment">//12345-&gt;1234-&gt;4</span></span><br><span class="line"><span class="keyword">int</span> baiWei = num /<span class="number">100</span>  %<span class="number">10</span> ; <span class="comment">//12345 -&gt;123 -&gt;3</span></span><br><span class="line"><span class="keyword">int</span> qianWei =num / <span class="number">1000</span>%<span class="number">10</span> ; <span class="comment">//12345-&gt;12 -&gt;2</span></span><br><span class="line"><span class="keyword">int</span> wanWei = num/<span class="number">10000</span> % <span class="number">10</span>; <span class="comment">//12345 -&gt;1 -&gt;1</span></span><br><span class="line">System.out.println(geWei+shiWei+baiWei+qianWei+wanWei);</span><br><span class="line"><span class="comment">//通项：num任一一位 ，num /所在位数的最小值  % 10 ；</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="10-选择结构"><a href="#10-选择结构" class="headerlink" title="10.选择结构"></a>10.选择结构</h2><h3 id="10-1if-else语句"><a href="#10-1if-else语句" class="headerlink" title="10.1if/else语句"></a>10.1if/else语句</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔条件)</span><br><span class="line">&#123;</span><br><span class="line">    ...<span class="comment">//如果条件为真 则执行</span></span><br><span class="line">&#125;<span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-2switch语句"><a href="#10-2switch语句" class="headerlink" title="10.2switch语句"></a>10.2switch语句</h3><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> rank = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">switch</span>(rank)&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		System.out.println(<span class="string">"笔记本电脑"</span>);</span><br><span class="line">		<span class="keyword">break</span> ;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		System.out.println(<span class="string">"U盘"</span>);</span><br><span class="line">		<span class="keyword">break</span> ;<span class="comment">//break：表示整个switch全部结束</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		System.out.println(<span class="string">"夏令营"</span>);</span><br><span class="line">		<span class="keyword">break</span> ;</span><br><span class="line">	<span class="keyword">default</span>:<span class="comment">//else...</span></span><br><span class="line">		System.out.println(<span class="string">"不奖励..."</span>);</span><br><span class="line">        <span class="keyword">break</span> ;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>case后面的值 必须是常量，case值不能重复</p>
+</li>
+<li><p>default可省略</p>
+</li>
+<li><p>swtich只有遇到break和最后 } 才结束，否则都不会结束</p>
+</li>
+<li><p>break一般不建议省略，但个别情况 可以省略。</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//个别情况</span></span><br><span class="line"><span class="comment">//switch()：大月   1 3  5  7 8 10  12</span></span><br><span class="line"><span class="keyword">int</span> month = <span class="number">4</span> ;</span><br><span class="line">        <span class="keyword">switch</span>(month)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                System.out.println(<span class="string">"是大月.."</span>);</span><br><span class="line">                <span class="keyword">break</span> ;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h2 id="11-随机数"><a href="#11-随机数" class="headerlink" title="11.随机数"></a>11.随机数</h2><ul>
+<li><p>n位随机数  ：  (int)(Math.random()* (n位数最大值+1-n位数最小值)    ) +  n位数的最小值 ;</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//产生四位随机整数   123   589   666   111</span></span><br><span class="line"><span class="comment">// 0-1    * 9000  --&gt; [0 ,9000) -&gt; int   --&gt; [0,8999]  +1000 --&gt;[1000 ,9999  ]</span></span><br><span class="line">System.out.println( (<span class="keyword">int</span>)(Math.random()*<span class="number">9000</span>) +<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//三位随机整数</span></span><br><span class="line"><span class="comment">// 0-1    * 三位数中最大的整百数  --&gt; [0 ,9000) -&gt; int   --&gt; [0,8999]  +1000 --&gt;[1000 ,9999  ]</span></span><br><span class="line"><span class="keyword">int</span> ran2 = (<span class="keyword">int</span>)(Math.random()*<span class="number">900</span>) +<span class="number">100</span> ;</span><br><span class="line">System.out.println(ran2);</span><br><span class="line"><span class="comment">//六位随机整数</span></span><br><span class="line"><span class="keyword">int</span> ran3 = (<span class="keyword">int</span>)(Math.random()*<span class="number">900000</span>) +<span class="number">100000</span> ;</span><br><span class="line">System.out.println(ran3);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成1到3中的随机一个数</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ran = (<span class="keyword">int</span>)(Math.random()*<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h2 id="12-while循环"><a href="#12-while循环" class="headerlink" title="12.while循环"></a>12.while循环</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(循环条件)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//循环操作  ;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环要注意更新变量，防止死循环（无限循环）</p>
+</li>
+<li><p>列子</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算100以内的偶数之和  2+4+6+8...+100</span></span><br><span class="line"><span class="keyword">int</span>  sum = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1</span> ;<span class="comment">//1- 100每个数字</span></span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">100</span>) &#123;</span><br><span class="line"><span class="keyword">if</span>(i % <span class="number">2</span> =<span class="number">0</span>) &#123; <span class="comment">//1--100 不能被2整除的数之和</span></span><br><span class="line">sum = sum + i;  <span class="comment">//sum=0+2 ;        sum = 2+4  ;  sum = 0 + 2 +4  +...100</span></span><br><span class="line">	&#125;</span><br><span class="line">	i++;</span><br><span class="line">&#125;</span><br><span class="line">        System.out.println(sum);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="13-选择循环小练习"><a href="#13-选择循环小练习" class="headerlink" title="13.选择循环小练习"></a>13.选择循环小练习</h3><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//购物</span></span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        String isContinue = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"请选择:\n1.夹克（300）\t2.Tshirt(200)\t3.衬衫(100)"</span>);</span><br><span class="line">            <span class="keyword">int</span> choice = input.nextInt();</span><br><span class="line">            <span class="keyword">switch</span> (choice)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    System.out.println(<span class="string">"夹克=300"</span>);</span><br><span class="line">                    count += <span class="number">300</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    System.out.println(<span class="string">"Tshirt=200"</span>);</span><br><span class="line">                    count +=<span class="number">200</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    System.out.println(<span class="string">"衬衫=100"</span>);</span><br><span class="line">                    count +=<span class="number">100</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    System.out.println(<span class="string">"输入有误请输入正确的商品编号！"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">"是否继续购物：y/n"</span>);</span><br><span class="line">            isContinue = input.next();</span><br><span class="line">        &#125;<span class="keyword">while</span> (isContinue.equals(<span class="string">"y"</span>));</span><br><span class="line">        System.out.println(<span class="string">"总计："</span>+count);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="13-for循环"><a href="#13-for循环" class="headerlink" title="13.for循环"></a>13.for循环</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入123456---&gt;输出54321</span></span><br><span class="line"><span class="comment">//for方式</span></span><br><span class="line"><span class="keyword">int</span> num = <span class="number">12345</span>;</span><br><span class="line"><span class="keyword">int</span> rear = -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++ )&#123;</span><br><span class="line">	<span class="keyword">if</span> (i == <span class="number">0</span>)&#123;</span><br><span class="line">		rear = num % <span class="number">10</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		num /= <span class="number">10</span>;</span><br><span class="line">		rear = num % <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(rear);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//foreach方式</span></span><br><span class="line"><span class="comment">//for(元素类型 变量名 : 数组)</span></span><br><span class="line">        <span class="keyword">int</span>[] forNums = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x: forNums) &#123;</span><br><span class="line">            System.out.print(x);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h2 id="14-break和continue"><a href="#14-break和continue" class="headerlink" title="14.break和continue"></a>14.break和continue</h2><ul>
+<li><p>break：退出循环</p>
+</li>
+<li><p>continue：退出当前循环，继续下一次循环</p>
+</li>
+<li><p>仅对当前层次的循环有效，内循环不会干扰外循环</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用户登录验证（zs,abc），验证次数最多3次</span></span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">3</span> ; i++)&#123;</span><br><span class="line">            System.out.println(<span class="string">"请输入账号："</span>);</span><br><span class="line">            String user = input.next();</span><br><span class="line">            System.out.println(<span class="string">"请输入密码："</span>);</span><br><span class="line">            String pwd = input.next();</span><br><span class="line">            <span class="keyword">if</span> (user.equals(<span class="string">"zs"</span>) &amp;&amp; pwd.equals(<span class="string">"abc"</span>))&#123;</span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"请重新输入，账号密码有误！"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag)&#123;</span><br><span class="line">            System.out.println(<span class="string">"登入成功！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"三次输入有误!"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="15-打印日历"><a href="#15-打印日历" class="headerlink" title="15.打印日历"></a>15.打印日历</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//已知1900.1.1日是星期一</span></span><br><span class="line"><span class="comment">//输入一个日期（2019.8.12）,系统输出当月日历</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义总天数：1900.1.1已经是第一天的</span></span><br><span class="line">      <span class="keyword">int</span> allDays = <span class="number">1</span>;</span><br><span class="line">      <span class="comment">//定义星期几</span></span><br><span class="line">      <span class="keyword">int</span> week = <span class="number">0</span>;</span><br><span class="line">      <span class="comment">//定义当月天数</span></span><br><span class="line">      <span class="keyword">int</span> daysOfMonth = <span class="number">0</span> ;</span><br><span class="line">      Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">      System.out.println(<span class="string">"请输入一个年份："</span>);</span><br><span class="line">      <span class="keyword">int</span> year = input.nextInt();</span><br><span class="line">      System.out.println(<span class="string">"请输入一个月份："</span>);</span><br><span class="line">      <span class="keyword">int</span> month = input.nextInt();</span><br><span class="line">      <span class="comment">//（year-1）---&gt;1900年多少天</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1900</span> ; i &lt; year ; i++)&#123;</span><br><span class="line">          <span class="comment">//判断是否为闰年</span></span><br><span class="line">          <span class="keyword">if</span>((year % <span class="number">4</span> ==<span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>) || year % <span class="number">400</span> == <span class="number">0</span>)&#123;</span><br><span class="line">              allDays = allDays +<span class="number">366</span>;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              allDays = allDays +<span class="number">365</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//（month-1）---&gt;1月多少天</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;month ; i++)&#123;</span><br><span class="line">          <span class="keyword">switch</span> (i)&#123;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">5</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">7</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">8</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">10</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">12</span> :</span><br><span class="line">                  allDays = allDays +<span class="number">31</span>;</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">4</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">6</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">9</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">11</span> :</span><br><span class="line">                  allDays = allDays +<span class="number">30</span>;</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              <span class="keyword">default</span>:</span><br><span class="line">                  <span class="keyword">if</span> ((year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span> ) || year % <span class="number">400</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                      allDays = allDays + <span class="number">29</span>;</span><br><span class="line">                  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                      allDays = allDays + <span class="number">28</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//到下个月一号的总天数</span></span><br><span class="line">      allDays ++;</span><br><span class="line">      <span class="comment">//算出一号是星期几</span></span><br><span class="line">      week = allDays % <span class="number">7</span> ;</span><br><span class="line">      <span class="comment">//判断当月天数</span></span><br><span class="line">      <span class="keyword">switch</span> (month)&#123;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">5</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">7</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">8</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">10</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">12</span> :</span><br><span class="line">                  daysOfMonth = <span class="number">31</span>;</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              <span class="keyword">case</span> <span class="number">4</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">6</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">9</span> :</span><br><span class="line">              <span class="keyword">case</span> <span class="number">11</span> :</span><br><span class="line">                  daysOfMonth = <span class="number">30</span>;</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              <span class="keyword">default</span>:</span><br><span class="line">                  <span class="keyword">if</span> ((year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span> ) || year % <span class="number">400</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                      daysOfMonth = <span class="number">29</span>;</span><br><span class="line">                  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                      daysOfMonth = <span class="number">28</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">"星期日\t星期一\t星期二\t星期三\t星期四\t星期五\t星期六"</span>);</span><br><span class="line">      <span class="comment">//打印空格</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt; week ; i ++)&#123;</span><br><span class="line">          System.out.print(<span class="string">"\t\t"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//打印日历</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; daysOfMonth ; i++)&#123;</span><br><span class="line">          <span class="keyword">if</span> ((week+i) % <span class="number">7</span> == <span class="number">0</span>)&#123;</span><br><span class="line">              System.out.println();</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.print((i+<span class="number">1</span>) + <span class="string">"\t\t"</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="16-循环打印图形"><a href="#16-循环打印图形" class="headerlink" title="16.循环打印图形"></a>16.循环打印图形</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打印正直角</span></span><br><span class="line">*</span><br><span class="line">**</span><br><span class="line">***</span><br><span class="line">****</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt; <span class="number">5</span> ;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ;j &lt; i +<span class="number">1</span> ; j++)&#123;</span><br><span class="line">                System.out.print(<span class="string">"*"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打印倒直角</span></span><br><span class="line">*****</span><br><span class="line">****</span><br><span class="line">***</span><br><span class="line">**</span><br><span class="line">*</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt; <span class="number">5</span> ;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ;j &lt; <span class="number">5</span> - i  ; j++)&#123;</span><br><span class="line">                System.out.print(<span class="string">"*"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打印菱形</span></span><br><span class="line">   *</span><br><span class="line">  ***</span><br><span class="line"> *****</span><br><span class="line">*******</span><br><span class="line"> *****</span><br><span class="line">  ***</span><br><span class="line">   *</span><br><span class="line">   </span><br><span class="line">       </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">3</span> - i; k++)</span><br><span class="line">                System.out.print(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span> * i + <span class="number">1</span>; j++)</span><br><span class="line">                System.out.print(<span class="string">"*"</span>);</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">3</span> - i; k++)</span><br><span class="line">                System.out.print(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span> * i + <span class="number">1</span>; j++)</span><br><span class="line">                System.out.print(<span class="string">"*"</span>);</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打印空心菱形</span></span><br><span class="line">   *</span><br><span class="line">  * *</span><br><span class="line"> *   *</span><br><span class="line">*     *</span><br><span class="line"> *   *</span><br><span class="line">  * *</span><br><span class="line">   *</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">3</span> - i; k++)</span><br><span class="line">                System.out.print(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span> * i + <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="comment">//判断是否在开头和结尾</span></span><br><span class="line">                <span class="keyword">if</span> (j == <span class="number">0</span> || j == <span class="number">2</span> * i)</span><br><span class="line">                    System.out.print(<span class="string">"*"</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    System.out.print(<span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">3</span> - i; k++)</span><br><span class="line">                System.out.print(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span> * i + <span class="number">1</span>; j++)</span><br><span class="line">                <span class="keyword">if</span> (j == <span class="number">0</span> || j == <span class="number">2</span> * i)</span><br><span class="line">                    System.out.print(<span class="string">"*"</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    System.out.print(<span class="string">" "</span>);</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="17-打印乘法口诀表"><a href="#17-打印乘法口诀表" class="headerlink" title="17.打印乘法口诀表"></a>17.打印乘法口诀表</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>*<span class="number">1</span>=<span class="number">1</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">2</span>=<span class="number">2</span>	<span class="number">2</span>*<span class="number">2</span>=<span class="number">4</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">3</span>=<span class="number">3</span>	<span class="number">2</span>*<span class="number">3</span>=<span class="number">6</span>	<span class="number">3</span>*<span class="number">3</span>=<span class="number">9</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">4</span>=<span class="number">4</span>	<span class="number">2</span>*<span class="number">4</span>=<span class="number">8</span>	<span class="number">3</span>*<span class="number">4</span>=<span class="number">12</span>	<span class="number">4</span>*<span class="number">4</span>=<span class="number">16</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">5</span>=<span class="number">5</span>	<span class="number">2</span>*<span class="number">5</span>=<span class="number">10</span>	<span class="number">3</span>*<span class="number">5</span>=<span class="number">15</span>	<span class="number">4</span>*<span class="number">5</span>=<span class="number">20</span>	<span class="number">5</span>*<span class="number">5</span>=<span class="number">25</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">6</span>=<span class="number">6</span>	<span class="number">2</span>*<span class="number">6</span>=<span class="number">12</span>	<span class="number">3</span>*<span class="number">6</span>=<span class="number">18</span>	<span class="number">4</span>*<span class="number">6</span>=<span class="number">24</span>	<span class="number">5</span>*<span class="number">6</span>=<span class="number">30</span>	<span class="number">6</span>*<span class="number">6</span>=<span class="number">36</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">7</span>=<span class="number">7</span>	<span class="number">2</span>*<span class="number">7</span>=<span class="number">14</span>	<span class="number">3</span>*<span class="number">7</span>=<span class="number">21</span>	<span class="number">4</span>*<span class="number">7</span>=<span class="number">28</span>	<span class="number">5</span>*<span class="number">7</span>=<span class="number">35</span>	<span class="number">6</span>*<span class="number">7</span>=<span class="number">42</span>	<span class="number">7</span>*<span class="number">7</span>=<span class="number">49</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">8</span>=<span class="number">8</span>	<span class="number">2</span>*<span class="number">8</span>=<span class="number">16</span>	<span class="number">3</span>*<span class="number">8</span>=<span class="number">24</span>	<span class="number">4</span>*<span class="number">8</span>=<span class="number">32</span>	<span class="number">5</span>*<span class="number">8</span>=<span class="number">40</span>	<span class="number">6</span>*<span class="number">8</span>=<span class="number">48</span>	<span class="number">7</span>*<span class="number">8</span>=<span class="number">56</span>	<span class="number">8</span>*<span class="number">8</span>=<span class="number">64</span>	</span><br><span class="line"><span class="number">1</span>*<span class="number">9</span>=<span class="number">9</span>	<span class="number">2</span>*<span class="number">9</span>=<span class="number">18</span>	<span class="number">3</span>*<span class="number">9</span>=<span class="number">27</span>	<span class="number">4</span>*<span class="number">9</span>=<span class="number">36</span>	<span class="number">5</span>*<span class="number">9</span>=<span class="number">45</span>	<span class="number">6</span>*<span class="number">9</span>=<span class="number">54</span>	<span class="number">7</span>*<span class="number">9</span>=<span class="number">63</span>	<span class="number">8</span>*<span class="number">9</span>=<span class="number">72</span>	<span class="number">9</span>*<span class="number">9</span>=<span class="number">81</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i + <span class="number">1</span>; j++) &#123;</span><br><span class="line">                    System.out.print((j + <span class="number">1</span>) + <span class="string">"*"</span> + (i + <span class="number">1</span>) + <span class="string">"="</span> + (j + <span class="number">1</span>) * (i + <span class="number">1</span>)+<span class="string">"\t"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="18-数组"><a href="#18-数组" class="headerlink" title="18.数组"></a>18.数组</h2><h3 id="18-1命名方式"><a href="#18-1命名方式" class="headerlink" title="18.1命名方式"></a>18.1命名方式</h3><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] students = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">300</span>];<span class="comment">//建议用这种形式</span></span><br><span class="line"><span class="keyword">int</span> students[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">200</span>];</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="18-2赋值方式"><a href="#18-2赋值方式" class="headerlink" title="18.2赋值方式"></a>18.2赋值方式</h3><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1:只声明数组的元素个数，但不赋值（默认值）</span></span><br><span class="line">        <span class="keyword">int</span>[] students0 ;</span><br><span class="line">        students0 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>] ;</span><br><span class="line"><span class="comment">//2:只赋值，但不声明元素个数</span></span><br><span class="line">       <span class="keyword">int</span>[] students ;</span><br><span class="line">       students = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>&#125; ;</span><br><span class="line"><span class="comment">//3: 理解为2的简化形式 .此种形式 不能拆开编写</span></span><br><span class="line">        <span class="keyword">int</span>[] students = &#123;<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>&#125; ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组长度：length</p>
+</li>
+<li><p>排序：Arrays.sort();默认升序</p>
+</li>
+</ul>
+<h2 id="19-冒泡排序"><a href="#19-冒泡排序" class="headerlink" title="19.冒泡排序"></a>19.冒泡排序</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = nums[j];</span><br><span class="line">                    nums[j] = nums[j + <span class="number">1</span>];</span><br><span class="line">                    nums[j + <span class="number">1</span>] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="20-找最值（擂台赛）"><a href="#20-找最值（擂台赛）" class="headerlink" title="20.找最值（擂台赛）"></a>20.找最值（擂台赛）</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] nums01 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">12</span>,<span class="number">65</span>,<span class="number">78</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">48</span>,<span class="number">65</span>,<span class="number">34</span>,<span class="number">9</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> maxNum = nums01[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt; nums01.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (maxNum&lt;nums01[i])&#123;</span><br><span class="line">                maxNum = nums01[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"最大值="</span>+maxNum);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="21-按数组顺序插入元素"><a href="#21-按数组顺序插入元素" class="headerlink" title="21.按数组顺序插入元素"></a>21.按数组顺序插入元素</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] nums02 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">66</span>,<span class="number">77</span>,<span class="number">88</span>,<span class="number">99</span>&#125;;</span><br><span class="line">        <span class="comment">//定义新的数组</span></span><br><span class="line">        <span class="keyword">int</span>[] newNums02 =<span class="keyword">new</span> <span class="keyword">int</span>[nums02.length+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> newNum = <span class="number">55</span>;</span><br><span class="line">        <span class="comment">//假设索要插入的位置是新数组的最大位置</span></span><br><span class="line">        <span class="keyword">int</span> position = newNums02.length;</span><br><span class="line">        <span class="comment">//将原数组元素复制到新数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums02.length; i++)&#123;</span><br><span class="line">            newNums02[i]=nums02[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//找到数组中第一比插入数字大的下标</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums02.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums02[i] &gt; newNum)&#123;</span><br><span class="line">                position = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将插入位置后面的值往后平移</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = newNums02.length-<span class="number">1</span>-<span class="number">1</span>; i &gt;= position ; i--)&#123;</span><br><span class="line">            newNums02[i+<span class="number">1</span>] = newNums02[i];</span><br><span class="line">        &#125;</span><br><span class="line">        newNums02[position] = newNum;</span><br><span class="line">        System.out.println(<span class="string">"插入后："</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; newNums02.length; i++) &#123;</span><br><span class="line">            System.out.print(newNums02[i] + <span class="string">"\t"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="22-抽奖练习题（综合）"><a href="#22-抽奖练习题（综合）" class="headerlink" title="22.抽奖练习题（综合）"></a>22.抽奖练习题（综合）</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注册--&gt;登录--&gt;抽奖</span></span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"注册："</span>);</span><br><span class="line">        System.out.println(<span class="string">"输入名字"</span>);</span><br><span class="line">        String registerName = input.next();</span><br><span class="line">        System.out.println(<span class="string">"输入密码"</span>);</span><br><span class="line">        String registerPwd = input.next();</span><br><span class="line">        System.out.println(<span class="string">"-------------------\n登录："</span>);</span><br><span class="line">        System.out.println(<span class="string">"输入名字"</span>);</span><br><span class="line">        String loginName = input.next();</span><br><span class="line">        System.out.println(<span class="string">"输入密码"</span>);</span><br><span class="line">        String loginPwd = input.next();</span><br><span class="line">        <span class="keyword">if</span>(loginName.equals(registerName) &amp;&amp; loginPwd.equals(registerPwd))&#123;</span><br><span class="line">            <span class="keyword">int</span> vipNum = (<span class="keyword">int</span>)(Math.random()*<span class="number">9000</span>)+<span class="number">1000</span>;</span><br><span class="line">            System.out.println(<span class="string">"你的vipNum="</span>+vipNum);</span><br><span class="line">            System.out.println(<span class="string">"--------------\n开始抽奖"</span>);</span><br><span class="line">            <span class="keyword">int</span>[] luckyNums = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">6</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>;i++)&#123;</span><br><span class="line">                luckyNums[i] = (<span class="keyword">int</span>)(Math.random()*<span class="number">9000</span>)+<span class="number">1000</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">"幸运数字是："</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> luckyNum : luckyNums)&#123;</span><br><span class="line">                System.out.print(luckyNum+<span class="string">"\t"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">            <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (luckyNums[i]==vipNum)&#123;</span><br><span class="line">                    flag = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                System.out.println(<span class="string">"恭喜你中奖了！"</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"很遗憾没有中奖！"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"登录失败，密码错误！"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="23-二维数组"><a href="#23-二维数组" class="headerlink" title="23.二维数组"></a>23.二维数组</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过输入省份获得相对应得城市</span></span><br><span class="line">        String[] provinces = &#123;<span class="string">"陕西"</span>, <span class="string">"山西"</span>, <span class="string">"四川"</span>&#125;;</span><br><span class="line">        String[][] cities = &#123;</span><br><span class="line">                &#123;<span class="string">"西安"</span>, <span class="string">"咸阳"</span>, <span class="string">"渭南"</span>&#125;,</span><br><span class="line">                &#123;<span class="string">"太原"</span>, <span class="string">"运城"</span>, <span class="string">"大同"</span>&#125;,</span><br><span class="line">                &#123;<span class="string">"成都"</span>, <span class="string">"都江堰"</span>, <span class="string">"广元"</span>&#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//两个素组获得关系：provinces的下标值等于cities的行号</span></span><br><span class="line">        <span class="comment">//先获取省份的下标值</span></span><br><span class="line">        <span class="keyword">int</span> position = -<span class="number">1</span> ;</span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入省份:"</span>);</span><br><span class="line">        String p = input.next();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; provinces.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (p.equals(provinces[i]))&#123;</span><br><span class="line">                position = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(p+<span class="string">"省所在的城市有："</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;cities[position].length;i++)&#123;</span><br><span class="line">            System.out.print(cities[position][i]+<span class="string">"\t"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="24-类和对象"><a href="#24-类和对象" class="headerlink" title="24.类和对象"></a>24.类和对象</h2><ul>
+<li>“具体的“—-&gt;对象</li>
+<li>“抽象的”—-&gt;类</li>
+<li>多个对象，可以抽象出 类</li>
+<li>类 可以产生多个对象</li>
+</ul>
+<h3 id="24-1组成部分"><a href="#24-1组成部分" class="headerlink" title="24.1组成部分"></a>24.1组成部分</h3><ul>
+<li>静态：属性（属性名，属性值）</li>
+<li>动态：方法（功能）</li>
+</ul>
+<h3 id="24-2Person类"><a href="#24-2Person类" class="headerlink" title="24.2Person类"></a>24.2Person类</h3><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">//静态 属性</span></span><br><span class="line">    String name ;</span><br><span class="line">    <span class="keyword">int</span> age ;</span><br><span class="line">    <span class="comment">//动态 方法</span></span><br><span class="line">    <span class="comment">//吃饭</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"吃饭！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//睡觉</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"睡觉！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过类创建对象</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//给p对象赋值</span></span><br><span class="line">p.name = <span class="string">"张三"</span>;</span><br><span class="line">p.age = <span class="number">18</span> ;</span><br><span class="line"><span class="comment">//调用p对象的方法</span></span><br><span class="line">p.eat();</span><br><span class="line">p.sleep();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法是多个对象共享的</p>
+</li>
+<li><p>属性是各个对象独有的</p>
+</li>
+</ul>
+<h3 id="24-3属性"><a href="#24-3属性" class="headerlink" title="24.3属性"></a>24.3属性</h3><ul>
+<li>就是全局变量<ul>
+<li>全局变量：方法以外，类以内；  有初始值（数据类型的默认值 int 0）</li>
+<li>局部变量：方法内部 ;没有初始值，在使用前 必须赋初值</li>
+</ul>
+</li>
+<li>局部变量可以和全局变量重名，并且局部变量优先级高</li>
+</ul>
+<h3 id="24-4方法的调用情况-static"><a href="#24-4方法的调用情况-static" class="headerlink" title="24.4方法的调用情况(static)"></a>24.4方法的调用情况(static)</h3><ul>
+<li>同一个类中<ul>
+<li>有static的方法不能直接掉用没有static的方法，反过来可以。</li>
+<li>都有static，或者都没有可以直接掉用</li>
+</ul>
+</li>
+<li>不在同一个类中<ul>
+<li>万能方法：通过类new一个对象，用对象调用方法</li>
+<li>类名.方法()中的方法必须是static</li>
+</ul>
+</li>
+<li>原因：有static方法的是类级别，没有static的方法是对象级别的</li>
+</ul>
+<h3 id="24-5内存结构"><a href="#24-5内存结构" class="headerlink" title="24.5内存结构"></a>24.5内存结构</h3><ul>
+<li>Person  zs= new Person();</li>
+<li>一般而言，对象 是指堆中的东西 就是 new Person() 有一个地址 </li>
+<li>栈里面zs的 称为引用类型 ：是对newPerson()对象的引用，存放地址</li>
+</ul>
+<h2 id="25-方法"><a href="#25-方法" class="headerlink" title="25.方法"></a>25.方法</h2><h3 id="25-1返回值"><a href="#25-1返回值" class="headerlink" title="25.1返回值"></a>25.1返回值</h3><ul>
+<li><p>无返回值—-&gt; 返回类型void</p>
+<p>有返回值</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> 返回类型 方法名()&#123;</span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line">    <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ctrl+F12查看所有方法</p>
+</li>
+</ul>
+<h3 id="25-2参数"><a href="#25-2参数" class="headerlink" title="25.2参数"></a>25.2参数</h3><ul>
+<li><p>有参数方法</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> 方法名(参数类型 参数名)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以多个参数 逗号隔开</p>
+</li>
+<li><p>参数类型可以是基本类型、数组类型、对象类型</p>
+</li>
+</ul>
+<h2 id="26-猜拳游戏"><a href="#26-猜拳游戏" class="headerlink" title="26.猜拳游戏"></a>26.猜拳游戏</h2><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">猜拳游戏：</span><br><span class="line">对方角色：1张三 2李四  3王五  </span><br><span class="line">介绍出拳规则：1剪刀  2石头  3布</span><br><span class="line">选择</span><br><span class="line">出拳：2 、计算机随机出拳1</span><br><span class="line">每局完后，询问是否继续</span><br><span class="line">结束后，输出结果：赢了?输了？    一共几局、赢了几局、输了几局</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//玩家类</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line">     String name;</span><br><span class="line">     <span class="comment">//记录玩家赢的局数</span></span><br><span class="line">     <span class="keyword">int</span> score;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">showFist</span><span class="params">()</span></span>&#123;</span><br><span class="line">         System.out.println(<span class="string">"请猜拳："</span>);</span><br><span class="line">         Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">         <span class="keyword">int</span> fist = input.nextInt();</span><br><span class="line">         <span class="keyword">switch</span> (fist)&#123;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                 System.out.println(name+<span class="string">"出了剪刀!"</span>);</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                 System.out.println(name+<span class="string">"出了石头!"</span>);</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                 System.out.println(name+<span class="string">"出了布!"</span>);</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             <span class="keyword">default</span>:</span><br><span class="line">                 System.out.println(<span class="string">"输入有误！请重新输入！"</span>);</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fist;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//电脑类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Computer</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="comment">//记录电脑赢的局数</span></span><br><span class="line">    <span class="keyword">int</span> score;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">showFist</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> fist= (<span class="keyword">int</span>)(Math.random()*<span class="number">3</span>)+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">switch</span> (fist)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                System.out.println(name+<span class="string">"出了剪刀!"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                System.out.println(name+<span class="string">"出了石头!"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                System.out.println(name+<span class="string">"出了布!"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fist;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//游戏类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Game</span> </span>&#123;</span><br><span class="line">    Player player;</span><br><span class="line">    Computer computer;</span><br><span class="line">    <span class="comment">//记录总局数</span></span><br><span class="line">    <span class="keyword">int</span> counts;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化游戏</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        player = <span class="keyword">new</span> Player();</span><br><span class="line">        computer = <span class="keyword">new</span> Computer();</span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入你自己的名字:"</span>);</span><br><span class="line">        player.name = input.next();</span><br><span class="line">        player.score = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"请选择你的对手：1.张三\t\t2.李四\t\t3.王五"</span>);</span><br><span class="line">            <span class="keyword">int</span> computerNum = input.nextInt();</span><br><span class="line">            computer.score = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">switch</span> (computerNum) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    computer.name = <span class="string">"张三"</span>;</span><br><span class="line">                    System.out.println(<span class="string">"你选择TA作为对手："</span> + computer.name);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    computer.name = <span class="string">"李四"</span>;</span><br><span class="line">                    System.out.println(<span class="string">"你选择TA作为对手："</span> + computer.name);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    computer.name = <span class="string">"王五"</span>;</span><br><span class="line">                    System.out.println(<span class="string">"你选择TA作为对手："</span> + computer.name);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    System.out.println(<span class="string">"输入有误！重新输入！"</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">while</span> (computer.name == <span class="keyword">null</span>);</span><br><span class="line">        System.out.println(<span class="string">"猜拳规则：1.剪刀\tt2.石头\t\t3.布\t\t"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始游戏</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        init();</span><br><span class="line">        String choice = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> playerFist = player.showFist();</span><br><span class="line">            <span class="keyword">int</span> computerFist = computer.showFist();</span><br><span class="line">            winOrDefeat(playerFist,computerFist);</span><br><span class="line">            System.out.println(<span class="string">"是否继续!(y/n)"</span>);</span><br><span class="line">            Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            choice = input.next();</span><br><span class="line">        &#125; <span class="keyword">while</span> (choice.equals(<span class="string">"y"</span>));</span><br><span class="line">        gameResult();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断输赢</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">winOrDefeat</span><span class="params">(<span class="keyword">int</span> playerFist, <span class="keyword">int</span> computerFist)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (playerFist)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">if</span> (computerFist == <span class="number">1</span>)&#123;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"平局！"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(computerFist == <span class="number">2</span>)&#123;</span><br><span class="line">                    computer.score ++;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"你输了！"</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    player.score ++;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"你赢了！"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">if</span> (computerFist == <span class="number">1</span>)&#123;</span><br><span class="line">                    player.score ++;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"你赢了！"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(computerFist == <span class="number">2</span>)&#123;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"平局！"</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    computer.score ++;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"你输了！"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                <span class="keyword">if</span> (computerFist == <span class="number">1</span>)&#123;</span><br><span class="line">                    computer.score ++;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"你输了！"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(computerFist == <span class="number">2</span>)&#123;</span><br><span class="line">                    player.score ++;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"你赢了！"</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    counts ++;</span><br><span class="line">                    System.out.println(<span class="string">"平局！"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">"输入有误！请输入1-3"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//最终游戏结果</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">gameResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (player.score &gt; computer.score)&#123;</span><br><span class="line">            System.out.println(<span class="string">"恭喜你赢了!"</span>);</span><br><span class="line">            System.out.println(<span class="string">"一共玩了"</span>+counts+<span class="string">"局,赢了"</span>+player.score+<span class="string">"局,输了"</span>+computer.score+<span class="string">"局!"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(player.score == computer.score)&#123;</span><br><span class="line">            System.out.println(<span class="string">"恭喜平局!"</span>);</span><br><span class="line">            System.out.println(<span class="string">"一共玩了"</span>+counts+<span class="string">"局,赢了"</span>+player.score+<span class="string">"局,输了"</span>+computer.score+<span class="string">"局!"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"遗憾你输了!"</span>);</span><br><span class="line">            System.out.println(<span class="string">"一共玩了"</span>+counts+<span class="string">"局,赢了"</span>+player.score+<span class="string">"局,输了"</span>+computer.score+<span class="string">"局!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Game game = <span class="keyword">new</span> Game();</span><br><span class="line">        game.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="27-字符串常见方法"><a href="#27-字符串常见方法" class="headerlink" title="27.字符串常见方法"></a>27.字符串常见方法</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符串比较</span></span><br><span class="line"><span class="keyword">boolean</span> flag = str.equals(<span class="string">"helloWorlD"</span>);</span><br><span class="line"><span class="comment">//忽略大小写 比较</span></span><br><span class="line"><span class="keyword">boolean</span> flag2 = str.equalsIgnoreCase(<span class="string">"helloWorlD"</span>);</span><br><span class="line"><span class="comment">//字符串长度</span></span><br><span class="line"><span class="keyword">int</span> len = str.length();</span><br><span class="line"><span class="comment">//转为大写</span></span><br><span class="line">String str = str.toUpperCase();</span><br><span class="line"><span class="comment">//转为小写</span></span><br><span class="line">String str = str.toLowerCase();</span><br><span class="line"><span class="comment">//判断 字符串A 是否存在于 另一个字符串B中，如果存在 ，则返回位置；如果不存在，返回-1</span></span><br><span class="line"><span class="comment">//从左到右</span></span><br><span class="line"><span class="keyword">int</span> position =  str.indexOf(<span class="string">'o'</span>) ; <span class="comment">//char -&gt;int</span></span><br><span class="line"><span class="comment">//从右到左</span></span><br><span class="line"><span class="keyword">int</span> position = str.lastIndexOf(<span class="string">'o'</span>);</span><br><span class="line"><span class="comment">//去掉首尾空格，不会去掉中间的</span></span><br><span class="line">String str = str.trim();</span><br><span class="line"><span class="comment">//截取字符串</span></span><br><span class="line">str.substring(start,end):   <span class="comment">//[start,end)</span></span><br><span class="line">str.substring(start):   <span class="comment">//从start到最后</span></span><br><span class="line"><span class="comment">//拆分字符串</span></span><br><span class="line">String phone = <span class="string">"029-12345-678"</span>  ;</span><br><span class="line">String[] ps = phone.split(<span class="string">"-"</span>) ;<span class="comment">//拆完三个变成数组，一共有三个元素</span></span><br><span class="line"><span class="keyword">for</span>(String p :ps)&#123;</span><br><span class="line">	System.out.println(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//split是特殊符号时用 \\ 作为转义符</span></span><br><span class="line"><span class="comment">//另一种拆分方法</span></span><br><span class="line">String str = <span class="string">"helloaworld"</span> ;</span><br><span class="line">StringTokenizer token = <span class="keyword">new</span> StringTokenizer( str  ,<span class="string">"a"</span>) ;</span><br><span class="line"><span class="keyword">while</span>(token.hasMoreElements() )<span class="comment">//hasMoreElements()表示是否有下一个元素</span></span><br><span class="line">&#123;</span><br><span class="line">	System.out.println(token.nextElement());<span class="comment">//取出当前元素</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//通过位置-&gt;找字符</span></span><br><span class="line"><span class="keyword">char</span> c = str.charAt(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//替换</span></span><br><span class="line"> str = str.replace(<span class="string">"xow"</span>, <span class="string">"AAA"</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="28-字符串例子"><a href="#28-字符串例子" class="headerlink" title="28.字符串例子"></a>28.字符串例子</h2><ul>
+<li><p>验证邮箱是否合法：</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isValidateEmail</span><span class="params">(String email)</span></span>&#123;</span><br><span class="line">        <span class="comment">//合法情况（需要存在@和.两个符号，并且@所在位置小于.所在位置）</span></span><br><span class="line">        <span class="keyword">if</span>(email.indexOf(<span class="string">"@"</span>) != -<span class="number">1</span>  &amp;&amp;  email.indexOf(<span class="string">"."</span>) != -<span class="number">1</span> &amp;&amp;</span><br><span class="line">                email.indexOf(<span class="string">"@"</span>)&lt; email.indexOf(<span class="string">"."</span>))&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">true</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span> ;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>校验电话是否合法</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//029-88888888</span></span><br><span class="line"><span class="comment">//        String phone = "18055555555"  ;</span></span><br><span class="line">        <span class="comment">//座机要求： 区号是 3或4位 ，右侧 8位</span></span><br><span class="line"><span class="comment">//        String phone = "029-12345678" ;</span></span><br><span class="line">        <span class="keyword">if</span>(phone.indexOf(<span class="string">"-"</span>)  != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"座机号码"</span>);</span><br><span class="line">            <span class="keyword">int</span> start = <span class="number">0</span> ;</span><br><span class="line">            <span class="keyword">int</span> end = phone.indexOf(<span class="string">"-"</span>) ;</span><br><span class="line"><span class="comment">//            "029"   "0931"</span></span><br><span class="line">            String zone = phone.substring(start, end);</span><br><span class="line">            <span class="comment">//座机的右侧："029-12345678" ;</span></span><br><span class="line">            <span class="keyword">int</span> startRight = end+ <span class="number">1</span> ;</span><br><span class="line">            String numberStr = phone.substring(startRight) ;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//正确：  区号正确 且 号码正确</span></span><br><span class="line">            <span class="keyword">if</span>((zone.length() == <span class="number">3</span> || zone.length() == <span class="number">4</span>)  &amp;&amp; (numberStr.length() == <span class="number">8</span>))&#123;</span><br><span class="line">                System.out.println(<span class="string">"座机正确"</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"座机有误！"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//18888888888</span></span><br><span class="line">            System.out.println(<span class="string">"手机号码"</span>);</span><br><span class="line">            String first = phone.substring(<span class="number">0</span>,<span class="number">1</span>) ;</span><br><span class="line">            <span class="keyword">if</span>(first.equals(<span class="string">"1"</span>)   &amp;&amp;   phone.length()==<span class="number">11</span>)&#123;</span><br><span class="line">                System.out.println(<span class="string">"正确的手机号"</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"错误的手机号"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>统计一个字符串中某个字符出现的次数</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//input:helloworld</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">test03</span><span class="params">(String input, String word )</span></span>&#123;<span class="comment">//l</span></span><br><span class="line"><span class="comment">//     helloworld -&gt; &#123;"h","e","l","l","o",...&#125;</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span> ;</span><br><span class="line">        String[] strs = <span class="keyword">new</span> String[input.length()] ;</span><br><span class="line">        <span class="comment">//通过substring方法将字符串拆分成字符串数组</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;input.length();i++)&#123;</span><br><span class="line">            strs[i] =  input.substring( i,i+<span class="number">1</span> ) ;</span><br><span class="line">            <span class="keyword">if</span>(strs[i].equals(word))&#123;</span><br><span class="line">                count ++ ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count ;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>统计一个字符串中某个子字符串出现的次数</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">test04</span><span class="params">(String input,String str)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; input.length() - str.length() + <span class="number">1</span>;i ++)&#123;</span><br><span class="line">            String s = input.substring(i, i + str.length());</span><br><span class="line">            <span class="keyword">if</span> (s.equals(str))&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种方法</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">test05</span><span class="params">(String input, String llo )</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span> ;</span><br><span class="line">        <span class="keyword">while</span>(  input.indexOf(llo)   != -<span class="number">1</span> )&#123;</span><br><span class="line">            count ++ ;</span><br><span class="line">            input = input.substring(  input.indexOf(llo) + <span class="number">1</span>    ) ;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count ;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h2 id="27-String常量池"><a href="#27-String常量池" class="headerlink" title="27.String常量池"></a>27.String常量池</h2><ul>
+<li><p>若想要new String()直接指向常量池，而不是指向堆，则使用String中的方法inter();</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br><span class="line">str = str.intern();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="28-StringBuffer"><a href="#28-StringBuffer" class="headerlink" title="28.StringBuffer"></a>28.StringBuffer</h2><ul>
+<li><p>String增强版，可以在原来的内存空间直接修改变量值</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer(<span class="string">"abc"</span>);<span class="comment">//String str = "abc";</span></span><br><span class="line">        <span class="comment">//str += "aaa"</span></span><br><span class="line">        <span class="comment">//abcaaa</span></span><br><span class="line">        sb.append(<span class="string">"aaa"</span>);<span class="comment">//追加</span></span><br><span class="line">        sb.insert(<span class="number">2</span>, <span class="string">"bbb"</span>);<span class="comment">//插入</span></span><br><span class="line">        System.out.println(sb);</span><br><span class="line">        sb.reverse();<span class="comment">//逆序</span></span><br><span class="line">        System.out.println(sb);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//String - StringBuffer各自独立，  可以相互转换</span></span><br><span class="line">        <span class="comment">//String -&gt;StringBuffer</span></span><br><span class="line">        String a = <span class="string">"hello"</span>;</span><br><span class="line">        StringBuffer sb2 = <span class="keyword">new</span> StringBuffer(a);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//StringBuffer -&gt;String</span></span><br><span class="line"><span class="comment">//       String b =  sb2.toString() ;</span></span><br><span class="line"><span class="comment">//      System.out.println(b);</span></span><br><span class="line">        String c = sb2 + <span class="string">""</span>;<span class="comment">//任何类型遇到字符串 都会转为字符串</span></span><br><span class="line">        System.out.println(c);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="29-修饰符"><a href="#29-修饰符" class="headerlink" title="29.修饰符"></a>29.修饰符</h2><ul>
+<li>priavte（私有的）：只有当前类能够访问（同一个类） ；其他类不能直接访问，如果要访问，需要借助于访问器：setter、getter<ul>
+<li>一般用于属性</li>
+</ul>
+</li>
+<li>public（公开的）:全部可以方位。<ul>
+<li>一般用于方法</li>
+</ul>
+</li>
+<li>protected：子类引用父类的protected属性: <ul>
+<li>不要new，子类直接使用父类属性</li>
+<li>如果new：需要static修饰属性</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/08/19/Java基础知识/JAVASE%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6.png" alt></p>
+<h2 id="30-Date日期类-util"><a href="#30-Date日期类-util" class="headerlink" title="30.Date日期类(util)"></a>30.Date日期类(util)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//格式化日期</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">String borrowDateStr = sdf.format(book.getBorrowDate());</span><br></pre></td></tr></table></figure>
+
+<h2 id="31-继承（extends）"><a href="#31-继承（extends）" class="headerlink" title="31.继承（extends）"></a>31.继承（extends）</h2><ul>
+<li>继承父类</li>
+<li>目的：减少冗余（重复）</li>
+<li>如果很多类的属性、方法 重复出现，重复 可以提取到父类。</li>
+<li>注意：如果方法名相同、方法体不同，则不能提取到父类。</li>
+<li>super关键字：跨过子类，直接去父类中调用。</li>
+<li>this关键字：先在当前类中找，没有就去父类。</li>
+<li>private修饰的、构造方法 是不能被继承的。但是 子类可以显示的调用父类构造super</li>
+</ul>
+<h2 id="32-构造方法"><a href="#32-构造方法" class="headerlink" title="32.构造方法"></a>32.构造方法</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> 类名()&#123;<span class="comment">//无参构造方法</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> 类名(参数类型 参数名,...)&#123;<span class="comment">//有参构造方法----&gt;一次性给多个属性值赋值</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果类中 没有任何构造方法，则系统自动提供一个无参构造，如果有则不会自动提供，需要手写。</p>
+</li>
+<li><p>一般建议：如果给类中 编写构造方法，则手动编写一个无参构造  防止报错</p>
+</li>
+<li><p>this()调用本类构造 </p>
+</li>
+<li><p>super()调用父类构造</p>
+</li>
+<li><p>如果在构造方法中 通过this(..)/super()调用其他的构造方法，则 this()/super()必须放在第一行。</p>
+</li>
+</ul>
+<h2 id="33-静态代码块"><a href="#33-静态代码块" class="headerlink" title="33.静态代码块"></a>33.静态代码块</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//静态代码块</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//普通代码块</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>静态代码块: 第一次执行。永远只执行一次  。初始化（人机猜拳  ：人  计算）</p>
+</li>
+<li><p>普通代码块:  在每次执行无参构造之前执行。</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">new Xxx()之前经历了以下过程:</span><br><span class="line">父类static...</span><br><span class="line">子类static...</span><br><span class="line">父类普通代码块...</span><br><span class="line">父类无参..</span><br><span class="line">子类普通代码块...</span><br><span class="line">子类无参...</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="34-方法重载、方法重写"><a href="#34-方法重载、方法重写" class="headerlink" title="34.方法重载、方法重写"></a>34.方法重载、方法重写</h2><p><img src="/2019/08/19/Java基础知识/JAVASE%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD.png" alt></p>
+<ul>
+<li>方法重载：方法名相同，参数列表不同，与返回值无关</li>
+<li>方法重写：子类对父类方法的重写，方法名，参数列表相同。<ul>
+<li>返回值也相同或是子类。</li>
+<li>访问修饰符不能比父类小。</li>
+<li>构造方法不能被重写，因为不能被继承。</li>
+</ul>
+</li>
+</ul>
+<h2 id="35-final关键字"><a href="#35-final关键字" class="headerlink" title="35.final关键字"></a>35.final关键字</h2><ul>
+<li>final修饰的类 ：不能被继承</li>
+<li>final修饰的方法：不能被重写</li>
+<li>final修饰的变量、属性：不能被修改</li>
+</ul>
+<h2 id="36-抽象类（abstract-）"><a href="#36-抽象类（abstract-）" class="headerlink" title="36.抽象类（abstract ）"></a>36.抽象类（abstract ）</h2><ul>
+<li><p>抽象方法：abstract ，没有方法体</p>
+</li>
+<li><p>抽象方法必须包含在抽象类中</p>
+</li>
+<li><p>抽象类中，并不一定包含抽象方法</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>   <span class="title">abstract</span>  <span class="title">X</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span>  <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>抽象类不能实例化（new X()），原因：抽象类中可能存在抽象方法，而抽象方法没有方法体</p>
+</li>
+<li><p>子类必须重写父类中的所有抽象方法</p>
+</li>
+</ul>
+<h2 id="37-多态"><a href="#37-多态" class="headerlink" title="37.多态"></a>37.多态</h2><ul>
+<li><p>简单来说：歧义  ，一个词语 必须根据上下文才有实际的含义</p>
+</li>
+<li><p>父类 引用对象名字 = new 子类()；</p>
+<ul>
+<li>就是说父类的引用指向子类的对象。</li>
+</ul>
+</li>
+<li><p>一般步骤：</p>
+<ul>
+<li>写一个父类</li>
+<li>子类重写父类的方法</li>
+<li>运行时：父类 引用对象名字 = new 子类()；</li>
+</ul>
+</li>
+<li><p>父类和子类之间的转换</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> d = <span class="number">10</span> ;  <span class="comment">// double = int ;</span></span><br><span class="line"><span class="comment">//1.从小到大 ，自动转换</span></span><br><span class="line">Pet pet =<span class="keyword">new</span> Dog();</span><br><span class="line"><span class="comment">//2.从大到小，强制转换</span></span><br><span class="line"><span class="keyword">int</span> num = (<span class="keyword">int</span>)<span class="number">12.3</span> ; <span class="comment">//int = (int)double ;</span></span><br><span class="line">Dog dog =  (Dog)( <span class="keyword">new</span> Pet());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何判断 该对象是 该类型 </p>
+<ul>
+<li><p>对象 instanceof  类型</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(Pet pet)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pet <span class="keyword">instanceof</span> Dog)&#123;</span><br><span class="line">        Dog dog = (Dog)pet;</span><br><span class="line">        dog.play01();</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pet <span class="keyword">instanceof</span> Penguin)&#123;</span><br><span class="line">        Penguin penguin = (Penguin)pet;</span><br><span class="line">        penguin.play02();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="38-多态的实现几种形式"><a href="#38-多态的实现几种形式" class="headerlink" title="38.多态的实现几种形式"></a>38.多态的实现几种形式</h2><ul>
+<li><p>1.方法重载add</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span></span>&#123; </span><br><span class="line">    <span class="keyword">return</span> num1+num2 ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">add</span><span class="params">(<span class="keyword">double</span> num1,<span class="keyword">double</span> num2,<span class="keyword">double</span> num3)</span></span>&#123; </span><br><span class="line">    <span class="keyword">return</span> num1+num2+num3 ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.方法重写</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;吃素...&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;吃肉...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.使用父类作为方法的形参</p>
+</li>
+<li><p>4.使用父类作为方法的返回值</p>
+</li>
+</ul>
+<h2 id="39-接口（interface）"><a href="#39-接口（interface）" class="headerlink" title="39.接口（interface）"></a>39.接口（interface）</h2><ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">//1.属性全部是static final类型的</span></span><br><span class="line">	<span class="comment">//2.方法全部是public abstract</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接口比抽象类 更进一步的“抽象”</p>
+</li>
+<li><p>接口中的所有方法默认public abstract</p>
+</li>
+<li><p>接口中的属性默认static final</p>
+</li>
+<li><p>接口中不存在构造方法</p>
+</li>
+</ul>
+<h2 id="40-实现（implements）"><a href="#40-实现（implements）" class="headerlink" title="40.实现（implements）"></a>40.实现（implements）</h2><ul>
+<li>实现接口</li>
+<li>实现类必须实现接口中的 抽象方法</li>
+</ul>
+<h2 id="41-接口和抽象类（约定）"><a href="#41-接口和抽象类（约定）" class="headerlink" title="41.接口和抽象类（约定）"></a>41.接口和抽象类（约定）</h2><ul>
+<li>java中类单继承，多实现</li>
+<li>java中接口可以多继承，相互继承</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/19/Java基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -657,7 +2210,10 @@
 </li>
 </ul>
 <h2 id="16-表单"><a href="#16-表单" class="headerlink" title="16.表单"></a>16.表单</h2><p><img src="/2019/08/19/JQuery/JQuery01.PNG" alt></p>
-<p><img src="/2019/08/19/JQuery/JQuery02.PNG" alt>颜群老师微信157468995</p>
+<p><img src="/2019/08/19/JQuery/JQuery02.PNG" alt></p>
+<ul>
+<li>颜群老师微信157468995</li>
+</ul>
 
       
 
@@ -671,81 +2227,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/19/JQuery/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/19/hello-world/" class="archive-article-date">
-  	<time datetime="2019-08-19T05:52:48.597Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/19/hello-world/">展开全文 >></a>
         </p>
       
 
